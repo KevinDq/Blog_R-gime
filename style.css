@@ -1,0 +1,475 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body
+{ 
+    font-family: 'Montserrat', sans-serif;      
+    overflow: hidden;
+}
+/* accueil */
+@keyframes titleAnim
+{    
+    to
+    {
+        opacity: 1;
+                
+    }
+}
+#home
+{       
+    z-index: 2;    
+    height: 100vh; 
+    width: 100%;
+    position: relative;
+    transition: 0.5s;
+}
+
+#home img
+{
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;   
+}        
+#home .home-container
+{
+    position: absolute;
+    width: 50%;    
+    right: 0;     
+    top: 50%;
+    transform: translateY(-50%);       
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+#home .home-container h1,
+#home .home-container p,
+.discover
+{
+    animation: titleAnim 2s forwards;
+    opacity: 0;    
+    color: rgb(255, 255, 255);
+}         
+#home .home-container h1
+{   
+    font-size: 4em;            
+}
+#home .home-container p
+{    
+    animation-delay: 0.5s;                  
+}
+#home .home-container .discover
+{       
+    animation-delay: 1s;
+    background-color: rgba(255, 255, 255, 0.651);
+    border-radius: 10px;     
+    padding: 15px 0;
+    font-size: 2em;
+    width: 200px;
+    transition: 0.5s;
+    cursor: pointer;    
+    animation-delay: 1s;    
+    color: rgb(31, 31, 31);
+    text-decoration: none;
+    transition: 0.5s;
+    margin: 0 auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+} 
+#home .home-container .discover i
+{
+    padding: 0 10px;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: 0.3s;
+}          
+#home .home-container .discover:hover
+{
+    background-color: rgb(255, 255, 255); 
+    transform: translateX(0) translateY(15px);    
+}  
+#home .home-container .discover:hover i
+{
+    opacity: 1;
+}          
+
+/* Menu */
+.container 
+{
+    display: flex;
+    width: 700vw;
+    /* scroll-snap-type: x mandatory; */    
+}
+.container section
+{
+    flex: none;
+    height: 100vh;
+    width: 100vw;
+   
+}
+.container #menu
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;    
+}
+.container #menu .background
+{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container #menu a .fa
+{
+    position: absolute;
+    font-size: 2.5em;
+    box-shadow: 1px 1px 10px black;
+    background-color: #cccccc2d;
+    border-radius: 50%;
+    border: 1px rgba(187, 187, 187, 0.13) solid;
+    color: rgb(165, 165, 165);
+    top:20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 10px;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.container #menu a .fa:hover
+{
+    transform: translateX(-50%) translateY(-5px);
+}
+.container #menu .grid-card
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    
+    gap: 40px;  
+}   
+/* menu */
+.container #menu .grid-card .card
+{      
+    position: relative;
+    width: 370px;
+    height: 230px;       
+    border-radius: 10px;   
+    border: 1px solid grey;     
+    transition : 0.5s;
+    background: rgba(158, 158, 158, 0.205);    
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.container #menu .grid-card .card:hover .title
+{
+    width: 75%;
+    height: 140px;
+    transform: translateY(-80px);
+} 
+.container #menu .grid-card .card:hover .title h2
+{
+    font-size: 0.9em;
+}
+.container #menu .grid-card .card:hover .content
+{
+    visibility: visible;
+}
+.container #menu .grid-card .card .title
+{
+    margin: 0 auto;
+    transition: 0.5s;
+    width: 100%;
+    height: 200px; 
+}
+.container #menu .grid-card .card .title .img-container
+{    
+    height: 100%;  
+    margin: 0 auto;
+    transition: 0.5s;    
+}    
+.container #menu .grid-card .card .title .img-container img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.container #menu .grid-card .card .title h2
+{
+    text-align: center;
+    font-size: 1.1em;
+    color: #2e2e2e;
+    font-weight: 400;
+    transition: 0.5s;
+}
+.container #menu .grid-card .card .content
+{
+    visibility: hidden;
+    padding: 15px;    
+    width: 100%;    
+}
+.container #menu .grid-card .card .content ul
+{
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100%;
+   bottom: 60px;
+}
+.container #menu .grid-card .card .content ul li
+{
+    list-style-type: none;
+    text-align: center;
+    font-size: 0.8em;
+    /* color: #aa6600;   */
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+}
+.container #menu .grid-card .card .content ul li::before,
+.container #menu .grid-card .card .content ul li::after
+{
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 0 2px;
+}
+/* main #menu .grid-card .card .content ul li i
+{
+    font-size: 0.5em;
+    margin: 3px;
+} */
+.container #menu .grid-card .card .content a
+{
+    text-decoration: none;
+    color: #000;
+    background-color: white;
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    transition: 0.3s;
+}
+.container #menu .grid-card .card .content a:hover
+{
+    background-color: transparent;
+}
+.container #menu .grid-card #parcours-card,
+.container #menu .grid-card #strategy-card,
+.container #menu .grid-card #parcours-card .content a,
+.container #menu .grid-card #strategy-card .content a
+{
+    border: 1px rgb(0, 162, 255) solid;
+    color: rgb(39, 130, 182);
+}
+.container #menu .grid-card #alimentation-card,
+.container #menu .grid-card #post-regime-card,
+.container #menu .grid-card #alimentation-card .content a,
+.container #menu .grid-card #post-regime-card .content a
+{
+    border: 1px rgb(74, 180, 24) solid;
+    color: rgb(57, 114, 31);
+}
+.container #menu .grid-card #sport-card,
+.container #menu .grid-card #sport-card .content a
+{
+    border: 1px rgb(201, 149, 39) solid;
+    color: #aa6600;
+}
+.container #menu .grid-card #mental-card,
+.container #menu .grid-card #mental-card .content a
+{
+    border: 1px rgb(201, 39, 39) solid;
+    color: rgb(201, 39, 39);
+}
+/**/
+/**/
+.container .category 
+{    
+    margin: 0 auto;  
+    position: relative;    
+}
+.container .category .ctg-bg
+{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.container .category a .fa
+{
+    position: absolute;
+    font-size: 2.5em;
+    box-shadow: 1px 1px 10px black;
+    background-color: #cccccc2d;
+    border-radius: 50%;
+    border: 1px rgba(187, 187, 187, 0.13) solid;
+    color: rgb(165, 165, 165);
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 10px;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.container .category .back-menu
+{
+    position: absolute;
+    margin:  10px 20px; 
+    width: 40px;
+    height: 40px;  
+    transition: 0.3s; 
+}
+.container .category .back-menu:hover
+{   
+    transform: translateX(-5px);   
+}
+.container .category .back-menu img
+{
+    width: 100%;
+    object-fit: cover;
+    filter: invert(0.7);
+}
+.container .category a .fa-arrow-left
+{
+    left: 0;
+}
+.container .category a .fa-arrow-left:hover
+{
+    transform: translateX(-5px) translateY(-50%);
+}
+.container .category a .fa-arrow-right
+{
+    right: 0;
+}
+.container .category a .fa-arrow-right:hover
+{
+    transform: translateX(5px) translateY(-50%);
+}
+.container .category h2 
+{
+    text-align: center;
+    font-size: 3rem;
+    margin: 30px 0;
+    font-family: "Bebas Neue", serif;    
+    color: white;
+    font-weight: 400;
+}
+.container .category .category-container 
+{
+    width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+.container .category .category-container .category-text
+{
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: #f8f8f88a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    backdrop-filter: blur(5px);
+}
+.container .category .category-container .category-text:hover 
+{
+    transform: translateY(-5px);
+}
+.container .category .category-container .category-text h3 
+{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: "Oswald", serif;
+}
+.container .category .category-container .category-text p 
+{
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.container .category .category-container .category-text ul 
+{
+    padding-left: 20px;
+}
+.container .category .category-container .category-text img 
+{
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+.container #parcours h2,
+.container #strategy h2
+{text-shadow:  1px 1px 10px rgb(41, 121, 196);}
+.container #parcours h3,
+.container #strategy h3
+{color:  rgb(41, 121, 196);}
+.container #alimentation .category-container {width: 1700px;}
+.container #alimentation h2,
+.container #post-regime h2
+{text-shadow:  1px 1px 10px rgb(27, 167, 38);}
+.container #alimentation h3,
+.container #post-regime h3 
+{color:  rgb(29, 141, 39);}
+.container #mental h2{text-shadow:  1px 1px 10px rgb(201, 39, 39);}
+.container #mental h3{color: rgb(201, 39, 39);}
+.container #alimentation .category-container .category-text ul {margin: 20px;}
+.container #alimentation .category-container .category-text .recipe
+{    
+    padding: 5px 0;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+.container #alimentation .category-container .category-text .recipe h4 {font-size: 0.9em;}
+.container #alimentation .category-container .category-text .recipe span {margin-top:10px;}
+.container #alimentation .category-container .category-text .recipe-img
+{
+    width: 200px; 
+    height: 120px;    
+}
+.container #alimentation .category-container .category-text .recipe-img img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.container #sport h2 {text-shadow:  1px 1px 10px rgb(196, 134, 41);}
+.container #sport h3 {color:  rgb(175, 120, 36);}
+/* Responsive */
+@media (max-width: 900px) {
+    .category-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .category-container article {
+        width: 90%;
+    }
+}
