@@ -463,13 +463,168 @@ body
 .container #sport h2 {text-shadow:  1px 1px 10px rgb(196, 134, 41);}
 .container #sport h3 {color:  rgb(175, 120, 36);}
 /* Responsive */
-@media (max-width: 900px) {
-    .category-container {
+@media screen and (max-width: 900px) {
+    body
+    {
+        overflow-y: visible;
+    }
+    .container
+    {
         flex-direction: column;
-        align-items: center;
+        width: 100vw;
+    }   
+    .container #menu
+    {
+        height: 100vh;
+    } 
+    .container #menu .grid-card
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }     
+    .container .category
+    {
+        height: 100%;
+        padding-bottom: 30px;
+    }  
+    .container .category .ctg-bg
+    {
+        height: 100%;
+        object-fit: cover;
+    }    
+    .container .category .back-menu
+    {
+        transform: rotateZ(90deg);
+    }
+    .container .category .back-menu:hover
+    {
+        transform: rotateZ(90deg);
+    }
+    .container .category a .fa-arrow-left 
+    {
+        top: 30px;
+        left: 90px;
+        transform: rotateZ(90deg);
+    }
+    .container .category a .fa-arrow-right 
+    {
+        top:  30px;
+        right: 80px;
+        transform: rotateZ(90deg);
+    }
+    .container .category a .fa:hover
+    {
+        transform: rotateZ(90deg);
     }
     
-    .category-container article {
-        width: 90%;
+    .container .category .category-container
+    {
+        flex-direction: column;
+        align-items: center;
+        width: 900px;
+    }
+    .container .category .category-container .category-text
+    {
+        max-width: 80%;
+    }
+}
+@media screen and (max-width: 500px) {
+    body
+    {
+        overflow-y: visible;
+    }
+    #home .home-container
+    {        
+        right: 50%;
+        transform: translateX(50%) translateY(-50%);
+    }    
+    .container
+    {
+        flex-direction: column;
+        width: 100vw;
+    }    
+    .container #menu .grid-card
+    {
+        height: 100vh;
+        margin-top: 10px;
+        gap: 5px;
+        grid-template-columns: repeat(1, 1fr);
+    }     
+    .container #menu .grid-card .card
+    {
+        height: 80px;
+        width: 300px;
+    }
+    .container #menu .grid-card .card .title
+    {
+        height: 50px;
+    }
+    .container #menu .grid-card .card .title .img-container
+    {
+        display: none;
+    }
+    .container #menu .grid-card .card .content
+    {
+        visibility: visible;
+    }
+    .container #menu .grid-card .card .content ul
+    {
+        display: none;
+    }
+    .container .category
+    {
+        height: 100%;
+        padding-bottom: 30px;
+    }  
+    .container .category .ctg-bg
+    {
+        height: 100%;
+        object-fit: cover;
+    }    
+    .container .category .back-menu
+    {
+        transform: rotateZ(90deg);
+        margin: 5px;
+    }
+    .container .category .back-menu:hover
+    {
+        transform: rotateZ(90deg);
+    }
+    .container .category a .fa-arrow-left,
+    .container .category a .fa-arrow-right  
+    {
+        display: none;
+    }    
+    .container .category a .fa:hover
+    {
+        transform: rotateZ(90deg);
+    }
+    .container .category h2
+    {
+        font-size: 2rem;
+        margin: 15px;
+    }
+    .container .category .category-container
+    {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 5px;
+    }
+    .container .category .category-container .category-text
+    {
+        max-width: 95%;        
+    }
+    .container .category .category-container .category-text h3
+    {
+        font-size: 1.1rem;
+    }
+    .container .category .category-container .category-text p
+    {
+        font-size: 0.8rem;
+    }
+    .container .category .category-container .category-text ul li
+    {
+        font-size: 0.8rem;
     }
 }
